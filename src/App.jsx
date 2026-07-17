@@ -48,6 +48,18 @@ function App() {
     };
   }, []);
 
+  // Fallback: remove preloader if vendor JS didn't run (deployed environments)
+  useEffect(() => {
+    try {
+      const p = document.getElementById("preloader");
+      if (p) p.remove();
+      const st = document.getElementById("scroll-top");
+      if (st) st.classList.add("active");
+    } catch (e) {
+      // ignore
+    }
+  }, []);
+
   useEffect(() => {
     AOS.init({
       duration: 600,
