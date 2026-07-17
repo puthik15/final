@@ -1,0 +1,31 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.header-toggle {
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+}
+
+.navmenu ul {
+  padding-left: 0;
+}
+
+.contact-status {
+  margin-top: 1rem;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.send-message {
+  text-align: center;
+}
