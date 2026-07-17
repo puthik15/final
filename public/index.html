@@ -19,19 +19,18 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Vendor JS Files (needed for template features) -->
-    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/vendor/php-email-form/validate.js"></script>
-    <script src="/assets/vendor/aos/aos.js"></script>
-    <script src="/assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <!-- Template main JS (keeps original behavior) -->
-    <script src="/assets/js/main.js"></script>
+    <!-- Remove vendor scripts to avoid 404s; React bundle handles behavior.
+         Add inline preloader removal so the page doesn't stay stuck on spinner. -->
+    <script>
+      (function(){
+        try {
+          const p = document.getElementById('preloader');
+          if (p) p.remove();
+          const st = document.getElementById('scroll-top');
+          if (st) st.classList.add('active');
+        } catch (e) {}
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
