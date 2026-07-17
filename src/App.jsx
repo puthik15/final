@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, Element } from "react-scroll";
+import { Link as ScrollLink, Element } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -190,7 +191,7 @@ function App() {
           <ul>
             {navItems.map((item) => (
               <li key={item.id}>
-                <Link
+                <ScrollLink
                   to={item.id}
                   activeClass="active"
                   spy
@@ -201,9 +202,27 @@ function App() {
                 >
                   <i className={`bi ${item.icon} navicon`} />
                   {item.label}
-                </Link>
+                </ScrollLink>
               </li>
             ))}
+            <li>
+              <RouterLink
+                to="/portfolio-details"
+                onClick={() => setMenuOpen(false)}
+              >
+                <i className="bi bi-images navicon" />
+                Portfolio
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink
+                to="/service-details"
+                onClick={() => setMenuOpen(false)}
+              >
+                <i className="bi bi-hdd-stack navicon" />
+                Services
+              </RouterLink>
+            </li>
           </ul>
         </nav>
       </header>

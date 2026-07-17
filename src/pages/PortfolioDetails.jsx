@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function PortfolioDetails() {
   return (
@@ -17,12 +18,12 @@ export default function PortfolioDetails() {
           />
         </div>
 
-        <a
-          href="/"
+        <Link
+          to="/"
           className="logo d-flex align-items-center justify-content-center"
         >
           <h1 className="sitename">Alex Smith</h1>
-        </a>
+        </Link>
 
         <div className="social-links text-center">
           <a href="#" className="twitter">
@@ -86,7 +87,7 @@ export default function PortfolioDetails() {
             <nav className="breadcrumbs">
               <ol>
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li className="current">Portfolio Details</li>
               </ol>
